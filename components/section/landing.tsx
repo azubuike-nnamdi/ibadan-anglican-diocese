@@ -28,7 +28,7 @@ const Landing = () => {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image src={heroCathedral} alt="Cathedral" className="w-full h-full object-cover" width={1000} height={1000} />
-          <div className="absolute inset-0 hero-overlay" />
+          <div className="absolute inset-0 bg-black/70" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
@@ -46,7 +46,7 @@ const Landing = () => {
                 </Button>
               </Link>
               <Link href={ABOUT_URL}>
-                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                <Button size="lg" variant="outline" className="bg-transparent text-white ">
                   Learn More
                 </Button>
               </Link>

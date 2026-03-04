@@ -236,5 +236,13 @@ const news: NewsItem[] = [
 const eventCategories = ["All", "Synod", "Convention", "Youth", "Conference", "Thanksgiving", "Retreat"];
 
 
-export { churches, clergy, eventCategories, events, navLinks, news };
+
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 },
+};
+
+export { churches, clergy, eventCategories, events, fadeUp, navLinks, news };
 

@@ -23,7 +23,7 @@ const EventCard = ({ event, index = 0 }: EventCardProps) => {
       viewport={{ once: true, margin: "-30px" }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
     >
-      <Card className="hover-lift overflow-hidden border-border">
+      <Card className="hover-lift overflow-hidden border-border shadow-none">
         <CardContent className="p-0">
           <div className="flex flex-col sm:flex-row">
             <div className="sm:w-24 bg-primary text-primary-foreground flex flex-row sm:flex-col items-center justify-center p-4 gap-2 sm:gap-0">

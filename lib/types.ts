@@ -39,4 +39,10 @@ interface NewsItem {
   content: string;
 }
 
-export type { Church, ClergyMember, DioceseEvent, NewsItem };
+interface PageHeaderProps {
+  title: string;
+  subtitle?: string;
+  backgroundImage?: string;
+}
+
+export type { Church, ClergyMember, DioceseEvent, NewsItem, PageHeaderProps };
