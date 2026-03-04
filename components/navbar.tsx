@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from "react";
-import { Menu, X, Cross } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 import { HOME_URL } from "@/constants/routes";
 import { navLinks } from "@/data";
+import { AnimatePresence, motion } from "framer-motion";
+import { Cross, Menu, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 
 const Navbar = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1 font-sans">
           {navLinks.map((link) => (
             <Link
               key={link.href}
