@@ -1,4 +1,5 @@
-import { ABOUT_URL, CHURCHES_URL, CLERGY_URL, EVENTS_URL, YOUTH_URL, MEDIA_URL, NEWS_URL, CONTACT_URL, HOME_URL } from "@/constants/routes";
+import { ABOUT_URL, CHURCHES_URL, CLERGY_URL, CONTACT_URL, EVENTS_URL, HOME_URL, MEDIA_URL, NEWS_URL, YOUTH_URL } from "@/constants/routes";
+import { Church, ClergyMember, DioceseEvent, NewsItem } from "@/lib/types";
 
 const navLinks = [
   { href: HOME_URL, label: "Home" },
@@ -13,4 +14,227 @@ const navLinks = [
 ];
 
 
-export { navLinks };
+
+const churches: Church[] = [
+  {
+    slug: "st-james-cathedral",
+    name: "St. James' Cathedral, Oke-Bola",
+    location: "Oke-Bola, Ibadan",
+    priest: "Ven. Dr. Adebayo Olumide",
+    serviceTimes: ["Sunday 7:00 AM - Holy Communion", "Sunday 9:00 AM - Morning Prayer", "Wednesday 6:00 PM - Bible Study"],
+    description: "The Cathedral Church of St. James, Oke-Bola is the mother church of the Diocese of Ibadan. Established in 1895, it has been a beacon of Anglican worship and ministry in the heart of Ibadan for over a century.",
+    image: "",
+    phone: "+234 802 345 6789",
+    email: "cathedral@ibadananglican.org",
+  },
+  {
+    slug: "st-davids-kudeti",
+    name: "St. David's Church, Kudeti",
+    location: "Kudeti, Ibadan",
+    priest: "Rev. Canon Samuel Ajayi",
+    serviceTimes: ["Sunday 7:30 AM - Holy Communion", "Sunday 10:00 AM - Family Service"],
+    description: "St. David's Kudeti is one of the oldest churches in the Diocese, known for its vibrant worship and community outreach programs.",
+    image: "",
+    phone: "+234 803 456 7890",
+    email: "stdavids@ibadananglican.org",
+  },
+  {
+    slug: "st-peters-aremo",
+    name: "St. Peter's Church, Aremo",
+    location: "Aremo, Ibadan",
+    priest: "Rev. Mrs. Funke Adegoke",
+    serviceTimes: ["Sunday 8:00 AM - Holy Communion", "Sunday 10:30 AM - Thanksgiving Service"],
+    description: "St. Peter's Aremo is a growing congregation with a strong emphasis on youth ministry and community development.",
+    image: "",
+    phone: "+234 805 678 9012",
+    email: "stpeters@ibadananglican.org",
+  },
+  {
+    slug: "all-saints-jericho",
+    name: "All Saints' Church, Jericho",
+    location: "Jericho, Ibadan",
+    priest: "Ven. Biodun Ogunleye",
+    serviceTimes: ["Sunday 7:00 AM - Early Morning Service", "Sunday 9:00 AM - Main Service", "Friday 6:00 PM - Evening Prayer"],
+    description: "All Saints' Jericho is renowned for its beautiful architecture and welcoming congregation in the heart of Jericho.",
+    image: "",
+    phone: "+234 806 789 0123",
+    email: "allsaints@ibadananglican.org",
+  },
+  {
+    slug: "christ-church-mapo",
+    name: "Christ Church, Mapo",
+    location: "Mapo Hill, Ibadan",
+    priest: "Rev. Dr. Tunde Oladimeji",
+    serviceTimes: ["Sunday 7:30 AM - Holy Communion", "Sunday 10:00 AM - Sung Eucharist"],
+    description: "Situated on the historic Mapo Hill, Christ Church Mapo offers a unique worship experience with panoramic views of the city.",
+    image: "",
+    phone: "+234 807 890 1234",
+    email: "christchurch@ibadananglican.org",
+  },
+  {
+    slug: "st-pauls-yemetu",
+    name: "St. Paul's Church, Yemetu",
+    location: "Yemetu, Ibadan",
+    priest: "Rev. Canon Kehinde Fashina",
+    serviceTimes: ["Sunday 8:00 AM - Morning Service", "Sunday 10:30 AM - Second Service"],
+    description: "St. Paul's Yemetu is a dynamic parish with active men's, women's, and youth fellowships serving the Yemetu community.",
+    image: "",
+    phone: "+234 808 901 2345",
+    email: "stpauls@ibadananglican.org",
+  },
+];
+
+const clergy: ClergyMember[] = [
+  {
+    id: "1",
+    name: "Most Rev. Dr. Joseph Akinfenwa",
+    title: "Bishop of Ibadan",
+    church: "St. James' Cathedral, Oke-Bola",
+    bio: "The Most Reverend Dr. Joseph Akinfenwa has served as the Bishop of the Diocese of Ibadan since 2010. He holds a doctorate in Theology and has been instrumental in expanding the diocese's outreach programs.",
+    image: "",
+  },
+  {
+    id: "2",
+    name: "Ven. Dr. Adebayo Olumide",
+    title: "Archdeacon / Vicar",
+    church: "St. James' Cathedral, Oke-Bola",
+    bio: "Venerable Dr. Olumide oversees the Cathedral parish and coordinates diocesan liturgical activities. He is passionate about Christian education and discipleship.",
+    image: "",
+  },
+  {
+    id: "3",
+    name: "Rev. Canon Samuel Ajayi",
+    title: "Vicar",
+    church: "St. David's Church, Kudeti",
+    bio: "Canon Ajayi is known for his powerful preaching and commitment to community service. He leads several outreach initiatives across the diocese.",
+    image: "",
+  },
+  {
+    id: "4",
+    name: "Rev. Mrs. Funke Adegoke",
+    title: "Vicar",
+    church: "St. Peter's Church, Aremo",
+    bio: "Reverend Mrs. Adegoke is a trailblazer in women's ministry. She champions youth empowerment and has established numerous scholarship programs.",
+    image: "",
+  },
+  {
+    id: "5",
+    name: "Ven. Biodun Ogunleye",
+    title: "Archdeacon",
+    church: "All Saints' Church, Jericho",
+    bio: "Venerable Ogunleye brings decades of pastoral experience to All Saints' Jericho. He is dedicated to inter-faith dialogue and community harmony.",
+    image: "",
+  },
+  {
+    id: "6",
+    name: "Rev. Dr. Tunde Oladimeji",
+    title: "Vicar",
+    church: "Christ Church, Mapo",
+    bio: "Dr. Oladimeji combines academic excellence with pastoral care. He lectures at the Seminary and mentors young clergy across the diocese.",
+    image: "",
+  },
+];
+
+const events: DioceseEvent[] = [
+  {
+    slug: "diocesan-synod-2026",
+    title: "Annual Diocesan Synod 2026",
+    date: "2026-04-15",
+    time: "9:00 AM",
+    location: "St. James' Cathedral, Oke-Bola",
+    category: "Synod",
+    description: "The Annual Diocesan Synod brings together clergy and laity from across the Diocese to deliberate on the progress and future direction of the church. This year's theme is 'Building Together in Faith.'",
+    image: "",
+  },
+  {
+    slug: "easter-convention-2026",
+    title: "Easter Convention 2026",
+    date: "2026-04-03",
+    time: "6:00 AM",
+    location: "Diocesan Conference Centre",
+    category: "Convention",
+    description: "Join thousands of worshippers for the annual Easter Convention featuring powerful sermons, praise sessions, and fellowship. Guest ministers from across Nigeria and beyond.",
+    image: "",
+  },
+  {
+    slug: "youth-camp-2026",
+    title: "Youth Summer Camp 2026",
+    date: "2026-07-20",
+    time: "10:00 AM",
+    location: "Anglican Youth Centre, Ibadan",
+    category: "Youth",
+    description: "An exciting week-long camp for young Anglicans aged 13-25. Activities include Bible study, sports, music, skill acquisition, and leadership training.",
+    image: "",
+  },
+  {
+    slug: "womens-conference-2026",
+    title: "Women's Conference 2026",
+    date: "2026-05-10",
+    time: "9:00 AM",
+    location: "All Saints' Church, Jericho",
+    category: "Conference",
+    description: "The annual Women's Conference themed 'Daughters of Grace' features teachings, workshops, and fellowship for women across the diocese.",
+    image: "",
+  },
+  {
+    slug: "harvest-thanksgiving-2026",
+    title: "Diocesan Harvest Thanksgiving",
+    date: "2026-10-25",
+    time: "8:00 AM",
+    location: "St. James' Cathedral, Oke-Bola",
+    category: "Thanksgiving",
+    description: "The annual harvest thanksgiving celebration bringing the diocese together in gratitude. Special musical performances and thanksgiving offerings.",
+    image: "",
+  },
+  {
+    slug: "clergy-retreat-2026",
+    title: "Clergy Retreat 2026",
+    date: "2026-03-18",
+    time: "8:00 AM",
+    location: "Retreat Centre, Eleyele",
+    category: "Retreat",
+    description: "A 3-day spiritual retreat for all clergy of the diocese. A time of renewal, reflection, and fellowship away from the demands of ministry.",
+    image: "",
+  },
+];
+
+const news: NewsItem[] = [
+  {
+    slug: "bishop-commissioning-new-church",
+    title: "Bishop Commissions New Church Building at Agodi",
+    excerpt: "The Bishop of Ibadan Diocese has commissioned a new church building at Agodi, marking a significant milestone in the diocese's expansion efforts.",
+    date: "2026-02-28",
+    image: "",
+    content: "In a joyful ceremony attended by hundreds of faithful...",
+  },
+  {
+    slug: "diocese-scholarship-programme",
+    title: "Diocese Launches New Scholarship Programme for Students",
+    excerpt: "The Diocese of Ibadan has launched a comprehensive scholarship programme to support indigent students across Oyo State.",
+    date: "2026-02-20",
+    image: "",
+    content: "The scholarship programme aims to support at least 200 students...",
+  },
+  {
+    slug: "youth-outreach-success",
+    title: "Youth Department Records Successful Outreach in February",
+    excerpt: "The Diocesan Youth Department reports a highly successful community outreach programme reaching over 500 young people.",
+    date: "2026-02-15",
+    image: "",
+    content: "The youth outreach programme, themed 'Light of the World'...",
+  },
+  {
+    slug: "lenten-programme-announced",
+    title: "2026 Lenten Programme Announced",
+    excerpt: "The Diocese has released the Lenten programme schedule with daily devotional guides and special services across all parishes.",
+    date: "2026-02-10",
+    image: "",
+    content: "As the Lenten season approaches, the Diocese has prepared...",
+  },
+];
+
+const eventCategories = ["All", "Synod", "Convention", "Youth", "Conference", "Thanksgiving", "Retreat"];
+
+
+export { churches, clergy, eventCategories, events, navLinks, news };
+
