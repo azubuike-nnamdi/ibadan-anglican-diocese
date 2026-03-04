@@ -1,4 +1,6 @@
-import { Cross, Mail, MapPin, Phone } from "lucide-react";
+import { ibadanAnglicanWhiteLogo } from "@/constants/icons";
+import { Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -7,12 +9,10 @@ const Footer = () => {
       <div className="container-narrow section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Cross className="h-6 w-6 text-secondary" />
-              <span className="font-serif font-bold text-lg">Diocese of Ibadan</span>
-            </div>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              The Diocese of Ibadan, Anglican Communion, is committed to spreading the Gospel, nurturing believers, and serving the community with the love of Christ.
+            <Image src={ibadanAnglicanWhiteLogo} alt="diocese-logo-white"
+              width={150} height={160} />
+            <p className="text-primary-foreground/70 text-xs leading-relaxed">
+              ...spreading the Gospel, nurturing believers, and serving the community with the love of Christ.
             </p>
           </div>
 

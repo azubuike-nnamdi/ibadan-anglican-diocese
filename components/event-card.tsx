@@ -26,7 +26,7 @@ const EventCard = ({ event, index = 0 }: EventCardProps) => {
       <Card className="hover-lift overflow-hidden border-border shadow-none">
         <CardContent className="p-0">
           <div className="flex flex-col sm:flex-row">
-            <div className="sm:w-24 bg-primary text-primary-foreground flex flex-row sm:flex-col items-center justify-center p-4 gap-2 sm:gap-0">
+            <div className="sm:w-24 bg-diocese-gold text-primary-foreground flex flex-row sm:flex-col items-center justify-center p-4 gap-2 sm:gap-0">
               <span className="text-2xl sm:text-3xl font-bold font-serif">{format(dateObj, "dd")}</span>
               <span className="text-xs uppercase tracking-wider">{format(dateObj, "MMM yyyy")}</span>
             </div>

@@ -1,9 +1,9 @@
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import localFont from "next/font/local";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +18,11 @@ const geistMono = Geist_Mono({
 const guggenheim = localFont({
   src: "./fonts/GuggenheimSansDisplay-Regular.woff",
   variable: "--font-guggenheim",
+});
+
+const playfair = localFont({
+  src: "./fonts/Playfair_9pt_SemiCondensed-Black.ttf",
+  variable: "--font-playfair",
 });
 
 
@@ -85,8 +90,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Link to the favicon */}
+        <link rel="icon" href="/assets/icons/ibadan-anglican-logo.png" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${guggenheim.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${guggenheim.variable} ${playfair.variable} antialiased`}
       >
         <Navbar />
         {children}

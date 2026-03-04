@@ -4,7 +4,7 @@ import { bishopPortrait, heroCathedral } from "@/constants/images";
 import { ABOUT_URL, CHURCHES_URL, EVENTS_URL, NEWS_URL, YOUTH_URL } from "@/constants/routes";
 import { churches, events, news } from "@/data";
 import { motion } from "framer-motion";
-import { BookOpen, CalendarDaysIcon, ChevronRight, ChurchIcon, HeartPulseIcon, UsersIcon } from "lucide-react";
+import { BookOpen, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ChurchCard from "../church-card";
@@ -41,7 +41,7 @@ const Landing = () => {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href={CHURCHES_URL}>
-                <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold">
+                <Button size="lg" className="bg-diocese-gold text-secondary-foreground hover:bg-secondary/90 font-semibold">
                   Find a Church <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -72,7 +72,7 @@ const Landing = () => {
               </div>
             </motion.div>
             <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.15 }}>
-              <p className="text-gold-accent font-semibold tracking-wider uppercase text-sm mb-2">From the Bishop&apos;s Desk</p>
+              <p className="text-diocese-gold font-semibold tracking-wider uppercase text-sm mb-2">From the Bishop&apos;s Desk</p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Welcome Message</h2>
               <div className="gold-bar mb-6" />
               <p className="text-muted-foreground leading-relaxed mb-4">
@@ -85,31 +85,8 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Quick Stats / Departments */}
-      <section className="section-padding bg-primary">
-        <div className="container-narrow">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {[
-              { icon: ChurchIcon, label: "Churches", value: "120+" },
-              { icon: UsersIcon, label: "Clergy", value: "200+" },
-              { icon: CalendarDaysIcon, label: "Annual Events", value: "50+" },
-              { icon: HeartPulseIcon, label: "Outreach Programs", value: "30+" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="text-center"
-              >
-                <stat.icon className="h-8 w-8 text-secondary mx-auto mb-3" />
-                <p className="font-serif text-3xl font-bold text-primary-foreground">{stat.value}</p>
-                <p className="text-sm text-primary-foreground/70">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      <section className="flex items-center justify-center my-12">
+        <h1 className="font-black text-2xl">this section is for the theme of the year</h1>
       </section>
 
       {/* Upcoming Events */}

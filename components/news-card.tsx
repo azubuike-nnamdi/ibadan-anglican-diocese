@@ -37,7 +37,7 @@ const NewsCard = ({ item, index = 0 }: NewsCardProps) => {
               <Calendar className="h-3 w-3 text-secondary" />
               <span>{format(new Date(item.date), "MMM dd, yyyy")}</span>
             </div>
-            <h3 className="font-serif font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
+            <h3 className="font-mono font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
               {item.title}
             </h3>
             <p className="text-sm text-muted-foreground line-clamp-2">{item.excerpt}</p>

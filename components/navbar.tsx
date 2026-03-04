@@ -20,17 +20,17 @@ const Navbar = () => {
         <Link href={HOME_URL} className="flex items-center gap-2">
           <Cross className="h-6 w-6 text-primary" />
           <div className="leading-tight">
-            <span className="font-serif font-bold text-primary text-sm md:text-base">Diocese of Ibadan</span>
+            <span className="font-sans font-bold text-primary text-sm md:text-base">Diocese of Ibadan</span>
             <span className="hidden sm:block text-[10px] text-muted-foreground tracking-wider uppercase">Anglican Communion</span>
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1 font-sans">
+        <nav className="hidden lg:flex items-center gap-1 font-mono">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${pathname === link.href
+              className={`px-3 py-2 text-sm font-mono rounded-md transition-colors ${pathname === link.href
                 ? "text-primary bg-primary/5"
                 : "text-muted-foreground hover:text-foreground hover:bg-muted"
                 }`}
